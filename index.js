@@ -3,8 +3,8 @@
 // DEPENDENCY FUNCTIONS: 
 // General dependencies
 const express = require('express');
-// const session = require('express-session');
-// const bodyParser = require('body-parser');
+//const session = require('express-session');
+//const bodyParser = require('body-parser');
 const path = require('path');
 
 // Oauth dependencies 
@@ -16,14 +16,10 @@ const path = require('path');
 // Setup express app
 const app = express();
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/server/public/index.html'));
-});
-
 // WEBPACK FUNCTIONS:
 // Tells app to use static files to render to browser 
-// app.use(express.static('./server/static/'));
-// app.use(express.static('./client/dist/'));
+//app.use(express.static('./server/static/css'));
+app.use(express.static('./client/dist/'));
 
 // DATABASE CALL FUNCTIONS:
 // Connect to the database and load models
@@ -34,7 +30,7 @@ app.get('/*', (req, res) => {
 // Tell app to parse cookie headers sent between cilent and server
 // app.use(cookieParser());
 // Tell app to parse HTTP body messages
-// app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 // Tell app to authenticate sessions between cient and server
 // app.use(session({
 //     secret: 'some secret password',
@@ -77,7 +73,7 @@ app.get('/*', (req, res) => {
 
 // SERVER FUNCTIONS: 
 // Tells app to open and start server
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log('App listening on PORT ' + PORT);
 });
