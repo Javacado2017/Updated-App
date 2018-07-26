@@ -23,12 +23,18 @@ module.exports = {
 
   // Defines the rules of how the client side files are bundled and dumped into the output point
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      include: path.join(__dirname, './client/src'),
-      loader: 'babel-loader'
-    }],
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        include: path.join(__dirname, './client/src'),
+        loader: 'babel-loader'
+      },
+      {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader"]
+      }
+    ]
   },
   resolve: {
     extensions: ['.js','.jsx']
