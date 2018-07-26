@@ -18,7 +18,7 @@ const app = express();
 
 // WEBPACK FUNCTIONS:
 // Tells app to use static files to render to browser 
-//app.use(express.static('./server/static/css'));
+app.use(express.static('./server/static/'));
 app.use(express.static('./client/dist/'));
 
 // DATABASE CALL FUNCTIONS:

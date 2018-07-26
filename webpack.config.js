@@ -8,7 +8,7 @@
 // DEPENDENCY FUNCTIONS: 
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // ENTRY AND OUPUT FUNCTIONS: 
 module.exports = {
@@ -39,11 +39,11 @@ module.exports = {
   resolve: {
     extensions: ['.js','.jsx']
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './server/static/index.html'
-    })
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     template: './server/static/index.html'
+  //   })
+  // ],
   
   // Trigers to re-bundle when changes are made on the client side
   watch: true
