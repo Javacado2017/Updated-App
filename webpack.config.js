@@ -46,5 +46,5 @@ module.exports = {
   // ],
   
   // Trigers to re-bundle when changes are made to the src file
-  watch: true
+  watch: false
 };
