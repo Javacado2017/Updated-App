@@ -5,12 +5,12 @@
 // REFERENCES: https://webpack.js.org
     //https://www.youtube.com/watch?v=ytRnPV0kRN0&list=PL4cUxeGkcC9iTQ3J5oa6orDIMQKKxl8dC
 
-// DEPENDENCY FUNCTIONS: 
+// DEPENDENCY: 
 const path = require('path');
 const webpack = require('webpack');
 //const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// ENTRY AND OUPUT FUNCTIONS: 
+// DEFINE ENTRY/OUPUT/CONDITIONS: 
 module.exports = {
   // Defines the entry point
   entry: path.join(__dirname, './client/src/app.js'),
@@ -45,6 +45,6 @@ module.exports = {
   //   })
   // ],
   
-  // Trigers to re-bundle when changes are made on the client side
+  // Trigers to re-bundle when changes are made to the src file
   watch: true
 };

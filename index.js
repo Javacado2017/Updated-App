@@ -1,6 +1,6 @@
 // CREATING SERVER CONNECTION FRAMEWORK
 
-// DEPENDENCY FUNCTIONS: 
+// DEPENDENCY: 
 // General dependencies
 const express = require('express');
 //const session = require('express-session');
@@ -12,19 +12,18 @@ const path = require('path');
 // const passport = require('passport');
 // const config = require('./config');
 
-// EXPRESS FUNCTIONS:
+// EXPRESS APP:
 // Setup express app
 const app = express();
 
-// WEBPACK FUNCTIONS:
-// Tells app to use static files to render to browser 
+// APP ROUTES:
 app.use(express.static('./server/static/'));
 app.use(express.static('./client/dist/'));
 
-// DATABASE CALL FUNCTIONS:
+// DATABASE CALL:
 // Connect to the database and load models
-// var User = require('./server/models/user');
-// require('./server/models').connect(config.dbUri);
+var User = require('./server/models/user');
+require('./server/models').connect(config.dbUri);
 
 // Middleware functions to: 
 // Tell app to parse cookie headers sent between cilent and server
